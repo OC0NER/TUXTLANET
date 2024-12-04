@@ -189,14 +189,16 @@ body {
 
 /* Mapa */
 .map {
+    text-align: center;
     padding: 4rem 2rem;
     background: var(--light-bg);
 }
 
-.map-container {
-    max-width: 1200px;
-    margin: 2rem auto 0;
-    height: 400px;
+.mapa {
+    width: 90%;
+    max-width: none;
+    margin: 2rem auto;
+    height: 60vh;
     background: #ddd;
     border-radius: 1rem;
     overflow: hidden;
