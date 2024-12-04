@@ -132,6 +132,19 @@ body {
     background: var(--light-bg);
 }
 
+.support p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.support h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+
 .section-title {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -145,7 +158,6 @@ body {
 }
 
 .plans-container {
-
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
