@@ -39,12 +39,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
+.logo img {
+    width: 100px;
+    height: auto;
 }
 
 /* Estilos del ícono de hamburguesa */
