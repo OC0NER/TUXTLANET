@@ -43,7 +43,7 @@ body {
 }
 
 .logo img {
-    width: 100px;
+    width: 5vw;
     height: auto;
 }
 
@@ -223,8 +223,8 @@ body {
 .disclaimer {
     font-size: 0.8rem;
     text-align: center;
-    margin-top: 1rem;
-    background-color: linear-gradient(0deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+    padding: 1rem;
+    background:  linear-gradient(transparent 0%, var(--primary-color) 150%);
 }
 
 /* Mapa */
