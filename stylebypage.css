@@ -102,7 +102,7 @@
     color: white;
 }
 
-.document-item:hover .document-btn {
+.document-item button:hover {
     background: white;
     color: var(--primary-color);
     transform: scale(1.05);
@@ -114,7 +114,8 @@
     color: var(--text-color);
 }
 
-.document-btn {
+.document-item button {
+    border: none;
     text-decoration: none;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;

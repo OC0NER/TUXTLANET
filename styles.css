@@ -87,9 +87,13 @@ body {
     padding: 6rem 2rem 4rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
+    background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), /* Degradado semitransparente */
+    url('images/banner.jpg') center/cover no-repeat; /* Imagen de fondo */
 }
 
 .hero-content {
+    padding: 4rem 2rem 0 2rem;
     max-width: 800px;
 }
 
@@ -116,8 +120,12 @@ body {
 }
 
 .btn-primary {
+    border: none;
     background: white;
     color: var(--primary-color);
+    font-size: 1.25rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin-top: 2rem;
 }
 
 .btn-primary:hover {
@@ -185,6 +193,13 @@ body {
     font-weight: bold;
     color: var(--primary-color);
     margin: 1rem 0;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--accent-color);
 }
 
 /* Mapa */
