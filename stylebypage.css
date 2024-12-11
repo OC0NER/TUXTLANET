@@ -71,7 +71,7 @@
 .legal-documents {
     padding: 4rem 2rem;
     background: var(--light-bg);
-    text-align: left;
+    text-align: center;
 }
 
 .legal-documents .section-title {
@@ -90,28 +90,23 @@
 
 .document-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Coloca el texto y el botón en una columna */
+    align-items: center; /* Centra ambos elementos horizontalmente */
     padding: 1rem 0.5rem;
     border-bottom: 1px solid #ddd;
     transition: var(--transition);
-}
-
-.document-item:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.document-item button:hover {
-    background: white;
-    color: var(--primary-color);
-    transform: scale(1.05);
+    text-align: center; /* Asegura que el texto esté centrado */
 }
 
 .document-name {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--text-color);
+    overflow: hidden; /* Oculta texto que exceda el contenedor */
+    text-overflow: ellipsis; /* Agrega "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita saltos de línea */
+    max-width: 90%; /* Permite un ancho razonable */
+    margin-bottom: 1rem; /* Añade separación del botón */
 }
 
 .document-item button {
@@ -124,6 +119,19 @@
     color: white;
     font-weight: bold;
     transition: var(--transition);
+    margin-top: 0.5rem; /* Espaciado superior para separación */
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+.document-item:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.document-item button:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: scale(1.05);
 }
 
 /* ---- Opciones de Pago ---- */
@@ -145,20 +153,21 @@
 }
 
 .payment-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    justify-content: center; /* Centra los elementos */
+    gap: 2rem; /* Espaciado entre las tarjetas */
 }
 
 .payment-card {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
+     background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: var(--transition);
+    max-width: 300px; /* Limita el ancho máximo */
+    flex: 1 1 calc(33.333% - 2rem); /* Ocupa un tercio del espacio disponible */
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .payment-card:hover {
@@ -212,10 +221,9 @@
 
 .values-container {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1000px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a múltiples filas */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 2rem; /* Espaciado uniforme entre las tarjetas */
 }
 
 .value-item {
@@ -408,5 +416,21 @@
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+    .payment-card {
+        flex: 1 1 calc(100% - 2rem); /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    }
+
+    .document-item {
+        flex-direction: column; /* Mantén la disposición en columna */
+        align-items: center; /* Asegúrate de centrar el contenido en pantallas pequeñas */
+    }
+
+    .document-name {
+        white-space: normal; /* Permite múltiples líneas en móviles */
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+    }
 }
 
