@@ -344,6 +344,25 @@ body {
                 font-size: 2.5rem;
             }
 
+    /* Ajuste Area de Soporte*/
+
+    .support-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .support-left, 
+    .support-right {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .support-img {
+        width: 100%;
+        height: auto;
+    }
+
     /* Enlaces dentro del menú */
     .nav-links a {
         padding: 1rem;
