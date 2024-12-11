@@ -200,6 +200,9 @@
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
+    background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), /* Degradado semitransparente */
+    url('images/banner.jpg') center/cover no-repeat; /* Imagen de fondo */
 }
 
 .about-title {
