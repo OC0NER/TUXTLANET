@@ -12,12 +12,7 @@ jobs:
     steps:
     - name: Checkout código
       uses: actions/checkout@v3
-    
-    - name: Instalar dependencias (opcional, ajusta según tu proyecto)
-      run: |
-        npm install  # O el comando que uses para instalar dependencias
-        npm run build  # Comando para construir tu proyecto
-    
+
     - name: Deploy via SFTP
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
