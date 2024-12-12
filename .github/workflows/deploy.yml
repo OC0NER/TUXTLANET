@@ -1,26 +1,33 @@
-name: Deploy to SFTP
+name: Deploy to DreamHost via SFTP
 
 on:
   push:
     branches:
-      - main  # O la rama que estás utilizando
+      - main  # Cambia esto a tu rama principal si es diferente
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
+    - name: Checkout código
       uses: actions/checkout@v3
-
+    
+    - name: Instalar dependencias (opcional, ajusta según tu proyecto)
+      run: |
+        npm install  # O el comando que uses para instalar dependencias
+        npm run build  # Comando para construir tu proyecto
+    
     - name: Deploy via SFTP
-      uses: appleboy/ssh-action@v0.1.0  # Acción correcta para SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        host: ${{ secrets.SFTP_HOST }}  # Dirección del servidor SFTP
-        username: ${{ secrets.SFTP_USERNAME }}  # Usuario SFTP
-        password: ${{ secrets.SFTP_PASSWORD }}  # Contraseña SFTP
-        port: 22  # Puerto para SFTP
-        sync: true  # Para sincronizar los archivos
-        source: "./"  # Carpeta local de tu repositorio
-        target: "/home/briantux/tuxtlanet.com.mx/"  # Carpeta de destino en el servidor
-        delete: true  # Eliminar archivos en el servidor que ya no existen localmente (opcional).
+        username: ${{ secrets.SFTP_USERNAME }}
+        server: ${{ secrets.SFTP_HOST }}
+        port: 22 # Puerto estándar SFTP
+        password: ${{ secrets.SFTP_PASSWORD }}
+        local_path: './*'  # Carpeta con tus archivos de producción
+        remote_path: '/home/briantux/tuxtlanet.com.mx/'  # Ruta al directorio de tu sitio web
+        
+        # Configuraciones opcionales
+        sftp_only: true
+        delete_remote_files: false  # Cuidado con esto, puede borrar archivos existentes
