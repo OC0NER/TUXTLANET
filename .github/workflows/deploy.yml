@@ -20,4 +20,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: /home/tuxtlanet/ # Directorio local que deseas subir
-        server-dir: /public_html # Carpeta en el servidor
+        server-dir: /public_html/ # Carpeta en el servidor
