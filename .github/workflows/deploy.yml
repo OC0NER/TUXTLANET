@@ -19,5 +19,5 @@ jobs:
         server: ftp.tuxtlanet.com.mx
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: /home/ # Directorio local que deseas subir
+        local-dir: /home/briantux/tuxtlanet.com.mx/ # Directorio local que deseas subir
         server-dir: /public_html/ # Carpeta en el servidor
