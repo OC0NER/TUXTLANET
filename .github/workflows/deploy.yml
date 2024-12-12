@@ -14,11 +14,13 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Deploy via SFTP
-      uses: appleboy/ssh-action@v0.1.0
+      uses: appleboy/ssh-action@v0.1.0  # Acción correcta para SFTP
       with:
         host: ${{ secrets.SFTP_HOST }}  # Dirección del servidor SFTP
         username: ${{ secrets.SFTP_USERNAME }}  # Usuario SFTP
         password: ${{ secrets.SFTP_PASSWORD }}  # Contraseña SFTP
-        port: 22  # El puerto por defecto para SFTP es el 22
-        local-dir: ./  # Ruta a la carpeta de tu repositorio con los archivos a subir
-        remote-dir: /home/briantux/tuxtlanet.com.mx/  # Carpeta de destino en el servidor
+        port: 22  # Puerto para SFTP
+        sync: true  # Para sincronizar los archivos
+        source: "./"  # Carpeta local de tu repositorio
+        target: "/home/briantux/tuxtlanet.com.mx/"  # Carpeta de destino en el servidor
+        delete: true  # Eliminar archivos en el servidor que ya no existen localmente (opcional)
