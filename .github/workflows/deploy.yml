@@ -1,23 +1,28 @@
-name: Deploy to FTP
+name: Deploy to DreamHost via SFTP
 
 on:
   push:
     branches:
-      - main
+      - main  # Cambia esto a tu rama principal si es diferente
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
+    - name: Checkout código
       uses: actions/checkout@v3
 
-    - name: Deploy via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+    - name: Deploy via SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        server: ftp.tuxtlanet.com.mx
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: /home/tuxtlanet/ # Directorio local que deseas subir
-        server-dir: /public_html # Carpeta en el servidor
+        username: ${{ secrets.SFTP_USERNAME }}
+        server: ${{ secrets.SFTP_HOST }}
+        port: 22 # Puerto estándar SFTP
+        password: ${{ secrets.SFTP_PASSWORD }}
+        local_path: './*'  # Carpeta con tus archivos de producción
+        remote_path: '/home/briantux/tuxtlanet.com.mx/'  # Ruta al directorio de tu sitio web
+        
+        # Configuraciones opcionales
+        sftp_only: true
+        delete_remote_files: false  # Cuidado con esto, puede borrar archivos existentes
