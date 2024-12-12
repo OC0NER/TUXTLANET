@@ -23,4 +23,4 @@ jobs:
         sync: true  # Para sincronizar los archivos
         source: "./"  # Carpeta local de tu repositorio
         target: "/home/briantux/tuxtlanet.com.mx/"  # Carpeta de destino en el servidor
-        delete: true  # Eliminar archivos en el servidor que ya no existen localmente (opcional)
+        delete: true  # Eliminar archivos en el servidor que ya no existen localmente (opcional).
